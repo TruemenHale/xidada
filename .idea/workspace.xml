@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="345755d9-fcd7-4c3b-8795-2555d40138b7" name="Default" comment="" />
+    <list default="true" id="345755d9-fcd7-4c3b-8795-2555d40138b7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/pageChange.js" afterPath="$PROJECT_DIR$/js/pageChange.js" />
+    </list>
     <ignored path="xidada.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stlye.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stlye.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/stlye.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38131043">
+            <state vertical-scroll-proportion="-6.9607844">
               <caret line="179" column="21" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="37" />
               <folding />
             </state>
@@ -78,14 +80,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pageChange.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pageChange.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/pageChange.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.5555553">
-              <caret line="12" column="7" selection-start-line="8" selection-start-column="2" selection-end-line="12" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#41#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.65968585">
+              <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,10 +107,10 @@
       <list>
         <option value="$PROJECT_DIR$/css/stlye.css" />
         <option value="$PROJECT_DIR$/js/styleSet.js" />
-        <option value="$PROJECT_DIR$/js/pageChange.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/stlye.less" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/js/pageChange.js" />
       </list>
     </option>
   </component>
@@ -329,16 +329,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/pageChange.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5555553">
-          <caret line="12" column="7" selection-start-line="8" selection-start-column="2" selection-end-line="12" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -362,8 +352,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/stlye.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38131043">
+        <state vertical-scroll-proportion="-6.9607844">
           <caret line="179" column="21" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/pageChange.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65968585">
+          <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
           <folding />
         </state>
       </provider>

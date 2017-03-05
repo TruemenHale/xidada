@@ -58,6 +58,7 @@ $(function () {
                     $('.sentences').html(data.data.question.content);
                     $('.provenance').html(data.data.question.extra0);
                 }
+                current = data.data.current;
                 $.mobile.changePage('#gamePage',{
                     transition:'flow'
                 });
@@ -77,7 +78,7 @@ $(function () {
             $.post(rank_link,1,function(data){
                 $.mobile.loading('hide');
                 if(data.status == 200){
-                    $('.days').html(data.data.rank);
+                    $('.days').html(data.data.days);
                     $('.groups').html(data.data.groups);
                     $('.rankNow').html(data.data.rank);
                     $.mobile.changePage('#overPage',{
@@ -154,6 +155,10 @@ $(function () {
         $.mobile.changePage('#backPage',{
             transition:'flow'
         });
+        timeNum = 15;
+        $('.nextBtn').css("background-image","url(images/blankBtn.png)");
+        $('.nextBtn').html('<span class="time">15</span>s');
+        $('.nextBtn').css('padding','3% 0');
     });
     $('.return').on('click',function(){
         $.mobile.changePage('#beginPage',{
