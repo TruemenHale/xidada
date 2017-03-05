@@ -123,12 +123,58 @@
     margin: 0 auto;
     border-radius: 4px;
     border-bottom: 10px solid #fff1af;
+    word-wrap:break-word;
+    position: relative;
+    .flag{
+      width: 22%;
+      position: absolute;
+      left:-10px;
+      top:-10px;
+    }
+    .allusion{
+      padding-top: 10%;
+      overflow: hidden;
+      span{
+        float: left;
+        padding-left:5px;
+      }
+      .box{
+        width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      div>div{
+        width: 90%;
+        float: right;
+        font-size: 16px;
+        padding-right: 8px;
+      }
+      color: #fe9507;
+    }
+    .conversation{
+      padding-top: 10%;
+      display: none;
+      div{
+        font-size: 17px !important;
+        padding:13px;
+      }
+      color: #ff8f00;
+
+    }
   }
   .nextBtn{
-    height: 8%;
+    padding: 3% 0;
     margin: 13px auto;
-    background: url("../images/next.png")center center no-repeat;
+    background: url("../images/blankBtn.png")center center no-repeat;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    span{
+      margin-right: 2px;
+      font-size: 20px;
+    }
     background-size: 100% 100%;
+    margin-bottom: 10%;
   }
 }
 #overPage{
@@ -192,3 +238,85 @@
     }
   }
 }
+#listPage{
+  position: relative;
+  .listBack{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 23%;
+    height: 68%;
+    background: url("../images/listBack.png")center no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+  }
+  .return{
+    background: url("../images/return.png")center no-repeat;
+    background-size: 100% 100%;
+    height: 8%;
+    margin-top: 3%;
+  }
+  .listTop{
+    top: 3%;
+    width: 90%;
+    height: 20%;
+    position: absolute;
+    z-index: 100;
+  }
+  .listHolder{
+    background: #fff6ef;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 8%;
+    border-bottom: 3px solid #fbefe6;
+    .list{
+      width: 100%;
+      list-style: none;
+      li{
+        width: 100%;
+        padding: 2% 0;
+        color: #ffae15;
+        overflow: hidden;
+        .aName{
+          float: right;
+          padding-right: 20px;
+        }
+        .aRank{
+          float: left;
+          padding-left: 20px;
+          .medal{
+            height: 5%;
+            margin-left: -5px;
+          }
+        }
+        span{
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .showP{
+    margin-top: 10%;
+    padding-left: 20px;
+    padding-bottom: 8px;
+    width: 100%;
+    span{
+      color: #ffae15;
+    }
+  }
+}
+@media (max-width: 330px) {
+  .allusion{
+    div>div{
+      width: 88% !important;
+      font-size: 14px !important;
+    }
+  }
+}
+
+//.box{
+//  width: 90%;
+//  margin: 0 auto;
+//  margin-bottom: 30%;
+//}
