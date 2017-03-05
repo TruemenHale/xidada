@@ -1,9 +1,10 @@
 /**
  * Created by hughes on 2017/3/4.
  */
-var timer = null;
-var timeNum = 3;
-var nextFlag = 0;
+timer = null;
+timeNum = 15;
+nextFlag = 0;
+current = 1;
 $(function () {
    $('.startBtn').on('click',function(){
         $.mobile.changePage('#backPage',{
@@ -26,32 +27,36 @@ $(function () {
         timer = setInterval(function(){
             timeNum--;
             $('.time').html(timeNum);
-            if (timeNum == 1){
-                clearInterval(timer);
+            if (timeNum == 0){
                 nextFlag = 1;
-                $('.nextBtn').css('background','images/blankBtn.png');
+                clearInterval(timer);
+                $('.nextBtn').css("background-image","url(images/next.png)");
+                $('.nextBtn').html(" ");
+                $('.nextBtn').css('padding','6% 0');
             }
         },1000);
         $.mobile.loading('show');
         $.post(question_link,1,function(data){
             $.mobile.loading('hide');
             if(data.status == 200){
-                if(data.data.type == 'gushidiangu'){
+                $('.Qtitle').html(data.data.question.title);
+                if(data.data.question.type == 'gushidiangu'){
                     $('.allusion').css('display','block');
                     $('.conversation').css('display','none');
-                    if(data.data.extra0){
-                        $('.refrence').html(data.data.content);
-                        $('.via').html(data.data.extra0);
-                        $('.explain').html(data.data.extra1);
+                    if(data.data.question.extra0){
+                        $('.refrence').html(data.data.question.content);
+                        $('.via').html(data.data.question.extra0);
+                        $('.explain').html(data.data.question.extra1);
                     }else {
-                        $('.refrence').html(data.data.content);
+                        $('.refrence').html(data.data.question.content);
                         $('.box').css('display','none');
                         $('.box').eq(0).css('display','block');
                     }
                 }else{
                     $('.conversation').css('display','block');
                     $('.allusion').css('display','none');
-                    $('.sentences').html(data.data.content);
+                    $('.sentences').html(data.data.question.content);
+                    $('.provenance').html(data.data.question.extra0);
                 }
                 $.mobile.changePage('#gamePage',{
                     transition:'flow'
@@ -63,22 +68,75 @@ $(function () {
     });
 
     $('.nextBtn').on('click',function(){
-        if (!nextFlag){
+        if (nextFlag == 0){
             return false;
         }
         nextFlag = 0;
+        if(current == 5){
+            $.mobile.loading('show');
+            $.post(rank_link,1,function(data){
+                $.mobile.loading('hide');
+                if(data.status == 200){
+                    $('.days').html(data.data.rank);
+                    $('.groups').html(data.data.groups);
+                    $('.rankNow').html(data.data.rank);
+                    $.mobile.changePage('#overPage',{
+                        transition:'flow'
+                    });
+                }else {
+                    alert(data.info);
+                }
+            });
+        }
+        clearInterval(timer);
+        $('.nextBtn').css("background-image","url(images/blankBtn.png)");
+        $('.nextBtn').html('<span class="time">15</span>s');
+        $('.nextBtn').css('padding','3% 0');
+        timeNum = 15;
+        timer = setInterval(function(){
+            timeNum--;
+            $('.time').html(timeNum);
+            if (timeNum == 0){
+                nextFlag = 1;
+                clearInterval(timer);
+                $('.nextBtn').css("background-image","url(images/next.png)");
+                $('.nextBtn').html(" ");
+                $('.nextBtn').css('padding','6% 0');
+            }
+        },1000);
         var _data = {};
         _data.new = "true";
+        $.mobile.loading('show');
         $.post(question_link,_data,function(data){
+            $.mobile.loading('hide');
+            $('.Qtitle').html(data.data.question.title);
             if(data.status == 200){
-
+                console.log(data.data);
+                if(data.data.question.type == 'gushidiangu'){
+                    console.log(1);
+                    $('.allusion').css('display','block');
+                    $('.conversation').css('display','none');
+                    if(data.data.extra0){
+                        $('.refrence').html(data.data.question.content);
+                        $('.via').html(data.data.question.extra0);
+                        $('.explain').html(data.data.question.extra1);
+                    }else {
+                        $('.refrence').html(data.data.question.content);
+                        $('.box').css('display','none');
+                        $('.box').eq(0).css('display','block');
+                    }
+                }else{
+                    console.log(2);
+                    $('.conversation').css('display','block');
+                    $('.allusion').css('display','none');
+                    $('.sentences').html(data.data.question.content);
+                    $('.provenance').html(data.data.question.extra0);
+                }
+                current = data.data.current;
             }else{
                 alert(data.info);
             }
         });
-        //$.mobile.changePage('#overPage',{
-        //    transition:'flow'
-        //});
     });
     $('.goOver').on('click',function(){
        $('.firstState').css('display','none');
