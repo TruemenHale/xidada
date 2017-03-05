@@ -87,6 +87,7 @@ $(function () {
                     alert(data.info);
                 }
             });
+            return false;
         }
         clearInterval(timer);
         $('.nextBtn').css("background-image","url(images/blankBtn.png)");
@@ -116,7 +117,7 @@ $(function () {
                     console.log(1);
                     $('.allusion').css('display','block');
                     $('.conversation').css('display','none');
-                    if(data.data.extra0){
+                    if(data.data.question.extra0){
                         $('.refrence').html(data.data.question.content);
                         $('.via').html(data.data.question.extra0);
                         $('.explain').html(data.data.question.extra1);
@@ -150,7 +151,7 @@ $(function () {
     $('.replay').on('click',function(){
         $('.secondState').css('display','none');
         $('.firstState').css('display','block');
-        $.mobile.changePage('#gamePage',{
+        $.mobile.changePage('#backPage',{
             transition:'flow'
         });
     });
